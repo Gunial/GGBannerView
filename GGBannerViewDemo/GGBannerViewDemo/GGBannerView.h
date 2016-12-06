@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^selectedIndexCallBack)();
+typedef void(^selectedIndexCallBack)(NSInteger index);
 
 @interface GGBannerView : UIView
 
-- (instancetype)initWithImageUrlArray:(NSArray *)imageUrls
-                        SelectedIndex:(selectedIndexCallBack)selectedIndex;
+/// 是否开启定时器
+@property (nonatomic, assign) BOOL hasTimer;
+
+- (instancetype)initWithImageUrls:(NSArray *)imageUrlArray selectedIndex:(selectedIndexCallBack)selectedIndex;
 
 @end

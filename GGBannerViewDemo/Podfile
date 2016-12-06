@@ -5,7 +5,7 @@
 
 target 'GGBannerViewDemo' do
 
-pod 'SDWebImage'
+pod 'YYWebImage'
 
 end
 
