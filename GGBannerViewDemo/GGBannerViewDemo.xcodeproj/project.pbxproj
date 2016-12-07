@@ -88,10 +88,10 @@
 			children = (
 				91BAA0331DF689EE00E16AC1 /* AppDelegate.h */,
 				91BAA0341DF689EE00E16AC1 /* AppDelegate.m */,
-				91BAA04B1DF6905100E16AC1 /* UIView+GGExtension.h */,
-				91BAA04C1DF6905100E16AC1 /* UIView+GGExtension.m */,
 				91BAA0361DF689EE00E16AC1 /* ViewController.h */,
 				91BAA0371DF689EE00E16AC1 /* ViewController.m */,
+				91BAA04B1DF6905100E16AC1 /* UIView+GGExtension.h */,
+				91BAA04C1DF6905100E16AC1 /* UIView+GGExtension.m */,
 				91BAA0471DF68A8500E16AC1 /* GGBannerView */,
 				91BAA0391DF689EE00E16AC1 /* Main.storyboard */,
 				91BAA03C1DF689EE00E16AC1 /* Assets.xcassets */,

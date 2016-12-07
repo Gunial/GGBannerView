@@ -56,7 +56,7 @@
 {
     [super layoutSubviews];
     self.collectionView.frame = self.bounds;
-    self.pageControl.frame = CGRectMake(0, self.gg_height - 20, self.gg_width, 20);
+    self.pageControl.frame = CGRectMake(self.gg_width / 3 * self.placeType, self.gg_height - 20, self.gg_width/3, 20);
 }
 
 /// 准备定时器

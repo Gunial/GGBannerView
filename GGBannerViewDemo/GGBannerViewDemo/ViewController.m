@@ -24,6 +24,7 @@
         NSLog(@"选中的索引:%zd",index);
     }];
     bannerView.hasTimer = YES;
+    bannerView.placeType = GGPageControlPlaceLeft;
     bannerView.frame = CGRectMake(0, 0, self.view.frame.size.width, 200);
     [self.view addSubview:bannerView];
 }
