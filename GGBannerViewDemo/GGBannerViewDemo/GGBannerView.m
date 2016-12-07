@@ -172,6 +172,8 @@
         _pageControl.numberOfPages = self.imageUrls.count;
         _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
         _pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+        [_pageControl setValue:[UIImage imageNamed:@"pageControl_nomal"] forKeyPath:@"pageImage"];
+        [_pageControl setValue:[UIImage imageNamed:@"pageControl_selected"] forKeyPath:@"currentPageImage"];
     }
     return _pageControl;
 }
