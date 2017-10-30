@@ -20,6 +20,9 @@
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, copy) selectedIndexCallBack selectedIndex;
 @property (nonatomic, strong) NSArray *imageUrls;
+/// 是否开启定时器
+@property (nonatomic, assign) BOOL hasTimer;
+
 @end
 
 @implementation GGBannerView
@@ -32,7 +35,12 @@
 {
     self = [super init];
     if (self) {
-        if (imageUrlArray.count) self.imageUrls = imageUrlArray;
+        if (imageUrlArray.count) {
+            self.imageUrls = imageUrlArray;
+            if (imageUrlArray.count > 1) {
+                [self performSelector:@selector(prepareForTimer) withObject:self afterDelay:1.0];
+            }
+        }
         if (selectedIndex) self.selectedIndex =selectedIndex;
         
         [self addSubview:self.collectionView];
@@ -85,7 +93,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.imageUrls.count * (self.imageUrls.count ==1 ? 1 : 100000);
+    return self.imageUrls.count * (self.imageUrls.count == 1 ? 1 : 100000);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -140,15 +148,6 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     
     if (self.hasTimer) {
-        [self prepareForTimer];
-    }
-}
-
-#pragma mark - setter
-
-- (void)setHasTimer:(BOOL)hasTimer
-{
-    if (hasTimer) {
         [self prepareForTimer];
     }
 }
